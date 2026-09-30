@@ -11,7 +11,11 @@ Group project that explores whether countries with higher vaccination totals had
 - Correlation heatmap, vaccinations vs cases/deaths, and a **hypothesis test**: *is there a negative correlation between total vaccinations and total deaths?*
 
 ## Findings
-Countries with high vaccination totals tended to show lower death and case severity. The relationship isn't perfectly linear, but overall it supports the hypothesis.
+![Vaccinations vs deaths per million](images/vaccination_vs_deaths.png)
+
+Country-level data **did not show the expected negative relationship**. After normalising per million people, the trend between vaccinations and deaths is slightly *positive*. This is a classic case of **confounding**. Countries with high vaccination rates (mostly in Europe) also tend to have older populations, more testing and more complete death reporting, and they vaccinated *after* big early waves. The raw cumulative data can't separate those effects.
+
+A fairer test would compare fatality rates over time within each country, or control for age structure and variant period.
 
 ## Data
 `data/country_vaccinations.csv` and `data/worldometer_data.csv` (public Kaggle COVID-19 datasets).
